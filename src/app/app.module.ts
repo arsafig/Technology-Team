@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { DashboardComponent } from './paginas/dashboard/dashboard.component';
 import { SidebarComponent } from './componentes/sidebar/sidebar.component';
-import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from "@angular/common/http";
 
@@ -23,9 +22,21 @@ import { GridComponent } from './componentes/grid/grid.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatListModule } from "@angular/material/list";
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSelectModule} from '@angular/material/select';
+import {MatStepperModule} from '@angular/material/stepper';
+
+//pipes
 import { NoNuloPipe } from './pipes/no-nulo.pipe';
+import { FormularioComponent } from './componentes/formulario/formulario.component';
 
-
+//ng mask
+import { NgxMaskModule } from 'ngx-mask'
+import { MatNativeDateModule } from '@angular/material/core';
+import { FormularioEquiposComponent } from './componentes/formulario-equipos/formulario-equipos.component';
+import { RegistroComponent } from './paginas/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -33,9 +44,11 @@ import { NoNuloPipe } from './pipes/no-nulo.pipe';
     LoginComponent,
     DashboardComponent,
     SidebarComponent,
-    NavbarComponent,
     GridComponent,
-    NoNuloPipe
+    NoNuloPipe,
+    FormularioComponent,
+    FormularioEquiposComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
@@ -49,9 +62,17 @@ import { NoNuloPipe } from './pipes/no-nulo.pipe';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatSidenavModule,
+    MatListModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    
     FormsModule, 
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

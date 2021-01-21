@@ -30,7 +30,7 @@ export class GridComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  team={};
+  team:any;
 
 
   constructor(
@@ -48,9 +48,11 @@ export class GridComponent implements AfterViewInit {
   }
 
   playersApi() {
+
     this._jugadoresApi.servicioPlayersApi().subscribe(resp => {
       this.dataSource.data = resp;
-    })
+    });
+    
   }
 
   filtroListado(event: Event) {
@@ -61,6 +63,7 @@ export class GridComponent implements AfterViewInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+
   }
 
 

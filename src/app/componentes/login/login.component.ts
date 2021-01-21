@@ -22,16 +22,16 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.formularioUsuario();
+    this.formularioLogin();
  
   }
 
 
-  formularioUsuario() {
+  formularioLogin() {
 
     this.usuario = this._formBuilder.group({
       usuario: ['', [Validators.required, Validators.minLength(4), Validators.pattern('^[a-z]*$')]],
-      password: ['', [Validators.required, Validators.minLength(4),Validators.pattern('^[A-Z0-9~!@#$%^&*()_+=-]./"*$')]],
+      password: ['', [Validators.required, Validators.minLength(4),Validators.pattern('^[A-Z0-9~!@#$%^&*()_+=-]*$')]],
       privacidad: ['', [Validators.required]],
     }); 
 

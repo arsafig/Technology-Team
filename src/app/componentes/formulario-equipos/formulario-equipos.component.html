@@ -1,0 +1,89 @@
+<div class="contenedor">
+  <div class="contenedor-jugador">
+
+    <div class="col-lateral-izq">
+      <img src="https://image.flaticon.com/icons/png/512/194/194938.png" width="150" height="150" alt="avatar">
+      <p class="datos-jugador"> Datos del equipo</p>
+    </div>
+
+    <div class="col-formulario-jugador">
+      <form [formGroup]="equipo" (ngSubmit)="guardarDatosEquipo()">
+        <div class="titulo-login">
+        </div>
+
+        <div class="formulario-jugador">
+
+          <div class="campo">
+            <mat-form-field appearance="fill" style="width: 100% !important">
+              <mat-label>abreviatura</mat-label>
+              <input matInput type="text" formControlName="abreviatura" />
+            </mat-form-field>
+          </div>
+
+          <div class="campo">
+            <mat-form-field appearance="fill" style="width: 100% !important">
+              <mat-label>Conferencia</mat-label>
+              <mat-select formControlName="conferencia">
+                <mat-option *ngFor="let listado of listadoConferencias" [value]="listado.id">
+                  {{listado.valor}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="campo">
+            <mat-form-field appearance="fill" style="width: 100% !important">
+              <mat-label>comentarios</mat-label>
+              <textarea matInput type="text" formControlName="comentarios"></textarea>
+            </mat-form-field>
+          </div>
+
+          <div class="campo">
+            <mat-form-field appearance="fill" style="width: 100% !important">
+              <mat-label>nombre del equipo</mat-label>
+              <input matInput type="text" formControlName="nombreEquipo" />
+            </mat-form-field>
+          </div>
+
+          <div class="campo">
+            <mat-form-field appearance="fill" style="width: 100% !important">
+              <mat-label>Ciudad</mat-label>
+              <mat-select formControlName="ciudad">
+                <mat-option *ngFor="let ciudades of listadoDeCiudades" [value]="ciudades.id">
+                  {{ciudades.valor}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="campo">
+          <button [disabled]="!equipo.valid" class="boton" style="width: 100% !important" mat-flat-button
+            color="primary">Agregar
+          </button>
+        </div>
+
+        <div class="tabla">
+          <table>
+            <tr>
+              <th>Abr</th>
+              <th>Conferencia</th>
+              <th>Comentarios</th>
+              <th>Nombre del equipo</th>
+              <th>Ciudad</th>
+            </tr>
+            <tr *ngFor="let tab of tabla">
+              <td>{{tab.abreviatura}}</td>
+              <td>{{tab.conferencia}}</td>
+              <td>{{tab.comentarios}}</td>
+              <td>{{tab.nombreEquipo}}</td>
+              <td>{{tab.ciudad}}</td>
+            </tr>
+          </table>
+        </div>
+      
+      </form>
+    </div>
+
+  </div>
+</div>

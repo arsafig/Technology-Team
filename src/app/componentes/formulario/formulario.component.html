@@ -1,0 +1,124 @@
+<div class="contenedor">
+
+  <div class="contenedor-jugador">
+
+    <div class="col-lateral-izq">
+      <img src="https://image.flaticon.com/icons/png/512/194/194938.png" width="150" height="150" alt="avatar">
+      <p class="datos-jugador"> Datos del jugador</p>
+    </div>
+
+    <div class="col-formulario-jugador">
+      <form [formGroup]="jugador" (ngSubmit)="guardarDatosJugador()">
+        <div class="titulo-login">
+        </div>
+
+        <div class="formulario-jugador">
+
+          <div class="campo">
+            <mat-form-field appearance="fill" style="width: 100% !important">
+              <mat-label>Primer Nombre</mat-label>
+              <input matInput type="text" formControlName="primerNombre" name=primerNombre
+                onchange="primerNombre.value = primerNombre.value.toUpperCase()"   />
+              <small *ngIf="validar('primerNombre')" class="error">
+                Solo mayusculas | No pude estar vacio.
+              </small>
+            </mat-form-field>
+          </div>
+
+          <div class="campo">
+            <mat-form-field appearance="fill" style="width: 100% !important">
+              <mat-label>Apellido</mat-label>
+              <input matInput type="text" formControlName="apellido" name="apellido"
+              onchange="apellido.value = apellido.value.toUpperCase()" />
+              <small *ngIf="validar('apellido')" class="error">
+                Solo minusculas | No pude estar vacio.
+              </small>
+            </mat-form-field>
+          </div>
+
+          <div class="campo">
+            <mat-form-field appearance="fill" style="width: 100% !important">
+              <mat-label>Altura en Pulgadas</mat-label>
+              <input matInput type="text" formControlName="alturaPulgadas"  mask="separator.2" separatorLimit="10" />
+              <small *ngIf="validar('alturaPulgadas')" class="error">
+                Solo minusculas | No pude estar vacio.
+              </small>
+            </mat-form-field>
+          </div>
+
+          <div class="campo">
+            <mat-form-field appearance="fill" style="width: 100% !important">
+              <mat-label>Altura en Pies</mat-label>
+              <input matInput type="text" formControlName="alturaPies"  mask="separator.2" separatorLimit="10"  />
+              <small *ngIf="validar('alturaPies')" class="error">
+                Solo minusculas | No pude estar vacio.
+              </small>
+            </mat-form-field>
+          </div>
+          <div class="campo">
+            <mat-form-field appearance="fill" style="width: 100% !important">
+              <mat-label>Peso</mat-label>
+              <input matInput type="text" formControlName="peso"  mask="separator.2" separatorLimit="10"  />
+              <small *ngIf="validar('peso')" class="error">
+                Solo minusculas | No pude estar vacio.
+              </small>
+            </mat-form-field>
+          </div>
+
+          <div class="campo">
+            <mat-form-field appearance="fill" style="width: 100% !important">
+              <mat-label>posicion</mat-label>
+              <mat-select  formControlName="posicion" (selectionChange)="CamposAdicionales()" >
+                <mat-option *ngFor="let p of pos"[value]="p.id">
+                  {{p.valor}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="campo">
+            <mat-form-field appearance="fill" style="width: 100% !important">
+              <mat-label>Fecha de Nacimiento</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento" (dateChange)="edad()" >
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div class="campo">
+            <mat-form-field appearance="fill" style="width: 100% !important">
+              <mat-label>Edad</mat-label>
+              <input matInput type="text" formControlName="edad" onchange="guardarDatosJugador()"mask="separator.0" />
+              <small *ngIf="validar('edad')" class="error">
+                No pude estar vacio.
+              </small>
+            </mat-form-field>
+          </div>
+          
+          <div class="campos-adicionales" *ngIf="mostrarCamposAdicionales" >
+            <div class="campo">
+              <mat-form-field appearance="fill" style="width: 100% !important">
+                <mat-label>Tiempo en la posicion</mat-label>
+                <input matInput type="text" formControlName="tiempoPosicion" />
+              </mat-form-field>
+            </div>
+            
+            <div class="campo">
+              <mat-form-field appearance="fill" style="width: 100% !important">
+                <mat-label>Comentarios</mat-label>
+                <textarea matInput type="text" formControlName="comentarios"></textarea>
+              </mat-form-field>
+            </div>
+            <div class="cajas">
+              <mat-checkbox >A</mat-checkbox>
+              <mat-checkbox >B</mat-checkbox>
+              <mat-checkbox [checked]="true" disabled >C</mat-checkbox>
+              <mat-checkbox >D</mat-checkbox>
+              <mat-checkbox >E</mat-checkbox>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

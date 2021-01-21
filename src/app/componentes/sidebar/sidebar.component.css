@@ -1,0 +1,20 @@
+.example-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.enlaces-navegacion {
+  margin-top: 100px;
+}
+.enlaces-navegacion > ul > li > a {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+}
+ul {
+  margin: 0;
+  list-style: none;
+}
+li {
+  margin-bottom: 20px;
+}

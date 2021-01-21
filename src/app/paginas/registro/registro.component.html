@@ -1,0 +1,30 @@
+<mat-horizontal-stepper linear #stepper>
+  <mat-step [stepControl]="formulario1" [editable]="isEditable">
+    <ng-template matStepLabel>Paso 1</ng-template>
+    <div>
+    <app-formulario  (enviar)="recibeF1($event)" ></app-formulario>
+      <div class="botones-navegacion">
+        <button mat-button matStepperNext>Siguiente</button>
+      </div>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="formulario2" [editable]="isEditable">
+    <ng-template matStepLabel>Paso 2</ng-template>
+    <div>
+        <app-formulario-equipos (enviar)="recibeF2($event)"></app-formulario-equipos>
+        <div class="botones-navegacion">
+          <button mat-button matStepperPrevious>Atras</button>
+          <button mat-button matStepperNext>Siguiente</button>
+        </div>
+      </div>
+    
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Finalizado</ng-template>
+    <p>Felicidades ! ya esta registrado.</p>
+    <div>
+      <button mat-button matStepperPrevious>Atras</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

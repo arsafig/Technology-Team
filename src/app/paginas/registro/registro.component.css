@@ -1,0 +1,7 @@
+.botones-navegacion{
+  position: absolute;
+  bottom: 300px;
+  right: 600px; 
+  text-align: center;
+  z-index: 10;
+}
