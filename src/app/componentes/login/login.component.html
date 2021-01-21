@@ -1,15 +1,20 @@
 <div class="contenedor">
+
   <div class="contenedor-login">
+
     <div class="col-lateral-izq">
       <p class="nombre-empresa">A R C</p>
     </div>
+
     <div class="col-formulario-login">
       <form [formGroup]="usuario" (ngSubmit)="login()">
         <div class="titulo-login">
           <p class="parrafo">Sign in</p>
           <h1 class="titulo">Welcome!</h1>
         </div>
+
         <div class="formulario-login">
+
           <div class="campo">
             <mat-form-field appearance="fill" style="width: 100% !important">
               <mat-label>User</mat-label>
@@ -23,47 +28,33 @@
           <div class="campo">
             <mat-form-field appearance="fill" style="width: 100% !important">
               <mat-label>Password</mat-label>
-              <input
-                matInput
-                [type]="oculto ? 'password' : 'text'"
-                formControlName="password"
-              />  <small *ngIf="validar('password')" class="error">
+              <input matInput [type]="oculto ? 'password' : 'text'" formControlName="password" />
+              <small *ngIf="validar('password')" class="error">
                 Solo mayusculas, numeros y simbolos | No pude estar vacio.
               </small>
-              <button
-                mat-icon-button
-                matSuffix
-                (click)="oculto = !oculto"
-                [attr.aria-label]="'hide password'"
-                [attr.aria-pressed]="oculto"
-              >
-                <mat-icon>{{
-                  oculto ? "visibility_off" : "visibility"
-                }}</mat-icon>
+              <button mat-icon-button matSuffix (click)="oculto = !oculto" [attr.aria-label]="'hide password'"
+                [attr.aria-pressed]="oculto">
+                <mat-icon>{{oculto ? "visibility_off" : "visibility"}}</mat-icon>
               </button>
             </mat-form-field>
           </div>
+
         </div>
+
         <div class="campo">
           <mat-checkbox>Remember Me</mat-checkbox>
           <a class="enlace" href="" routerLink="/login">Forgot Password ?</a>
         </div>
 
         <div class="campo">
-          <mat-checkbox formControlName="privacidad"
-            >I have read and agree
+          <mat-checkbox formControlName="privacidad">I have read and agree
             <a class="politicas" href="#">privacy policy</a>
           </mat-checkbox>
-          <button
-            [disabled]="!usuario.valid"
-            class="boton"
-            style="width: 100% !important"
-            mat-flat-button
-            color="primary"
-          >
-            Sign In
+          <button [disabled]="!usuario.valid" class="boton" style="width: 100% !important" mat-flat-button
+            color="primary">Sign In
           </button>
         </div>
+
       </form>
     </div>
   </div>

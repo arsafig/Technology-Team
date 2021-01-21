@@ -8,6 +8,7 @@ import { DashboardComponent } from './paginas/dashboard/dashboard.component';
 import { SidebarComponent } from './componentes/sidebar/sidebar.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from "@angular/common/http";
 
 // formularios reactivos
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -18,6 +19,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
+import { GridComponent } from './componentes/grid/grid.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { NoNuloPipe } from './pipes/no-nulo.pipe';
 
 
 
@@ -27,7 +33,9 @@ import {MatButtonModule} from '@angular/material/button';
     LoginComponent,
     DashboardComponent,
     SidebarComponent,
-    NavbarComponent
+    NavbarComponent,
+    GridComponent,
+    NoNuloPipe
   ],
   imports: [
     BrowserModule,
@@ -38,8 +46,12 @@ import {MatButtonModule} from '@angular/material/button';
     MatFormFieldModule, 
     MatCheckboxModule, 
     MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

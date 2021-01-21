@@ -1,0 +1,72 @@
+.tabla{
+  width: 80%;
+  margin: 20px auto;
+}
+table{
+  width: 100%;
+}
+.mat-icon{
+  color: lightgray;
+}
+.G{
+  color: green;
+}
+.C{
+  color: red;
+}
+.F{
+  color: blue;
+}
+.C-F{
+  color: blueviolet;
+}
+.F-C{
+  color: aqua;
+}
+.G-F{
+  color: orange;
+}
+
+table {
+  width: 100%;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: rgb(210, 255, 255);
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-description {
+  padding: 16px;
+  width: 80%;
+}
+
+.mat-header-row{
+  background-color: aqua;
+}
+.detalle-equipo{
+  margin: 20px 0;
+}
+.fila{
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
